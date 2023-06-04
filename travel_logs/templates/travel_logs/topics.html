@@ -1,0 +1,15 @@
+{% extends 'travel_logs/base.html' %}
+{% block content %}
+<p> Here are the trips you have added</p>
+<p>
+	<ul>
+		{% for topic in topics %}
+			<li>
+				<a href="{% url 'travel_logs:topic' topic.id %}">{{ topic }}</a>
+			</li>
+		{% empty %}
+			<li>Nothing has been added yet.</li>
+		{% endfor %}
+	</ul>
+</p>
+{% endblock content %}
