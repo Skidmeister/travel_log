@@ -1,6 +1,8 @@
 {% extends 'travel_logs/base.html' %}
+
 {% block content %}
-<p> Here are the trips you have added</p>
+
+<p> Here are the trips you have taken</p>
 <p>
 	<ul>
 		{% for topic in topics %}
@@ -11,5 +13,7 @@
 			<li>Nothing has been added yet.</li>
 		{% endfor %}
 	</ul>
+	<a href="{% url 'travel_logs:new_topic' %}">Add new trip</a>
 </p>
+
 {% endblock content %}
