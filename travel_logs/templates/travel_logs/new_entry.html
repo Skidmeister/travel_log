@@ -1,0 +1,11 @@
+{% extends 'travel_logs/base.html' %}
+{% block content %}
+
+<p>Add a new entry about your trip to <a href="{% url 'travel_logs:topic' topic.id %}">{{topic}}</a></p>
+
+<form action="{% url 'travel_logs:new_entry' topic.id %}" method='post'>
+	{% csrf_token %}
+	{{form.as_p}}
+	<button name='submit'>Add entry</button>
+</form>
+{% endblock content %}

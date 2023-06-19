@@ -14,6 +14,6 @@
 				<li> no entries so far... </li>
 			{% endfor %}
 		</ul>
-		
+		<a href="{% url 'travel_logs:new_entry' topic.id %}">Add new entry</a>
 	</p>
 {% endblock content%}
